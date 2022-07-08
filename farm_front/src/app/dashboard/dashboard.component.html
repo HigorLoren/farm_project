@@ -1,0 +1,7 @@
+<a routerLink="farm" class="btn btn-create-farm">Cadastrar Fazenda</a>
+<h3>Fazendas</h3>
+<ul>
+  <li *ngFor="let farm of farms">
+    <a routerLink="farm/{{farm.id}}/details">{{farm.name}}</a>
+  </li>
+</ul>

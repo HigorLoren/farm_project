@@ -1,0 +1,62 @@
+h3 {
+  width: 100%;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  padding: 4px 6px;
+  border: solid 1px rgb(146, 146, 146);
+  border-radius: 3px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.group select,
+.group input {
+  margin-bottom: 0;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}
+
+.btn-draw {
+  background-color: rgb(74, 74, 74);
+  color: white;
+  margin-bottom: 10px;
+}
+
+.btn-save {
+  margin-top: 14px;
+  background-color: rgb(45, 100, 203);
+  color: white;
+}
+
+[name='coordinates'] {
+  margin-top: 3px;
+}
+
+.coordinates {
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  font-size: 15px;
+  max-height: 400px;
+}

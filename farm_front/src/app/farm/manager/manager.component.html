@@ -1,0 +1,39 @@
+<div class="wrap">
+  <a class="w-100"
+    [routerLink]="this.urlParams.action === 'create' ? 'farm' : '/farm/' + farm.id + '/details'">Voltar</a>
+
+  <h3>{{actionTitle}} Fazenda</h3>
+
+  <input type="text" [(ngModel)]="farm.name" placeholder="Nome" />
+  <input type="number" [(ngModel)]="farm.area" placeholder="Área" />
+
+  <h4>Centróide</h4>
+  <div class="group">
+    <label for="centroidx">Latitude:</label>
+    <input type="number" name="centroidx" [(ngModel)]="farm.centroid[0]" placeholder="0" />
+  </div>
+  <div class="group">
+    <label for="centroidy">Longitude:</label>
+    <input type="number" name="centroidy" [(ngModel)]="farm.centroid[1]" placeholder="0" />
+  </div>
+
+  <h4>Geometria</h4>
+  <a (click)="draw('Polygon')" class="btn btn-draw w-100">Desenhar Limites</a>
+  <!-- <label for="coordinates">Coordenadas:</label>
+  <textarea class="w-100 coordinates" readonly>{{coordinates}}</textarea> -->
+
+  <h4>Dono</h4>
+  <select [(ngModel)]="farm.owner_id">
+    <option *ngFor="let owner of owners" [value]="owner.id" [selected]="owner === ownerSelected">
+      {{owner.name}}
+    </option>
+  </select>
+
+  <p class="error-message w-100" *ngIf="errorMessage">{{errorMessage}}</p>
+  <p class="success-message w-100" *ngIf="successMessage">{{successMessage}}</p>
+
+  <a (click)="createFarm(farm)" class="btn btn-save"
+    *ngIf="this.urlParams.action === 'create'">Criar</a>
+  <a (click)="updateFarm(farm)" class="btn btn-save"
+    *ngIf="this.urlParams.action === 'edit'">Atualizar</a>
+</div>

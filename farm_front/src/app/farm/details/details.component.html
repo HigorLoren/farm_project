@@ -1,0 +1,26 @@
+<a routerLink="..">Voltar</a>
+
+<h3>{{farm.name}}</h3>
+
+<p>
+  <b>Área: </b>{{farm.area}}
+</p>
+
+<h4>Centróide</h4>
+<div class="group">
+  <p>
+    <b>Latitude: </b>{{farm.centroid[0]}}
+  </p>
+  <p>
+    <b>Longitude: </b>{{farm.centroid[1]}}
+  </p>
+</div>
+
+<p>
+  <b>ID do Dono: </b>{{farm.owner_id}}
+</p>
+
+<div class="actions">
+  <a class="btn btn-edit" [routerLink]="['/farm', farm.id, 'edit']">Editar</a>
+  <a class="btn btn-delete" routerLink="/farm/{{farm.id}}/delete">Excluir</a>
+</div>
